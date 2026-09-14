@@ -29,11 +29,20 @@
         </p>
 
         <p>
-            <asp:Button ID="btnGuardarLocalidad" runat="server"
-                Text="Guardar localidad"
-                Width="145px"
-                ValidationGroup="Localidad" />
-        </p>
+    <asp:Button ID="btnGuardarLocalidad" runat="server"
+        Text="Guardar localidad"
+        Width="145px"
+        ValidationGroup="Localidad"
+        OnClick="btnGuardarLocalidad_Click" />
+</p>
+
+<asp:Label ID="lblMensajeLocalidad" runat="server" ForeColor="Red"></asp:Label>
+
+<asp:ValidationSummary ID="ValidationSummary1" runat="server"
+    HeaderText="Revise los siguientes errores:"
+    ShowSummary="True"
+    ShowMessageBox="True"
+    ValidationGroup="Localidad" />
 
         <asp:ValidationSummary ID="vsLocalidad" runat="server"
             HeaderText="Revise los siguientes errores:"
@@ -53,8 +62,24 @@
 
         <p>Repetir contraseña: <asp:TextBox ID="txtRepetirContrasena" runat="server" TextMode="Password"></asp:TextBox></p>
 
-        <p>Correo electrónico: <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox></p>
- 
+        <p>
+            Correo electrónico: 
+            <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox></p>
+
+            <asp:RequiredFieldValidator ID="rfvCorreo" runat="server"
+                 ControlToValidate="txtCorreo"
+                 Text="*"
+                 ErrorMessage="Ingrese un correo electrónico"
+                 ValidationGroup="Usuario">
+            </asp:RequiredFieldValidator>
+
+            <asp:RegularExpressionValidator ID="revCorreo" runat="server"
+                ControlToValidate="txtCorreo"
+                ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                Text="*"
+                ErrorMessage="Ingrese un correo electrónico válido"
+                ValidationGroup="Usuario">
+            </asp:RegularExpressionValidator>
         <p>
             CP:
             <asp:TextBox ID="txtCP" runat="server"></asp:TextBox>

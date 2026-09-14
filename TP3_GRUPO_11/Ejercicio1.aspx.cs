@@ -13,5 +13,30 @@ namespace TP3_GRUPO_11
         {
 
         }
+        protected void btnGuardarLocalidad_Click(object sender, EventArgs e)
+        {
+            string localidad = txtLocalidad.Text.Trim();
+
+            bool yaExiste = false;
+            foreach (ListItem item in ddlLocalidades.Items)
+            {
+                if (item.Text.Equals(localidad, StringComparison.OrdinalIgnoreCase))
+                {
+                    yaExiste = true;
+                    break;
+                }
+            }
+
+            if (yaExiste)
+            {
+                lblMensajeLocalidad.Text = "Esa localidad ya fue ingresada.";
+            }
+            else
+            {
+                lblMensajeLocalidad.Text = "";
+                ddlLocalidades.Items.Add(new ListItem(localidad));
+                txtLocalidad.Text = "";
+            }
+        }
     }
 }

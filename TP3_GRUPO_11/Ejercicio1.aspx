@@ -45,7 +45,11 @@
 
         <p>Nombre usuario: <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox></p>
 
-        <p>Contraseña: <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password"></asp:TextBox></p>
+        <p>Contraseña: <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:CompareValidator ID="cvContraseñas" runat="server" ControlToCompare="txtContrasena" 
+             ControlToValidate="txtRepetirContrasena" ErrorMessage="CompareValidator">Las contraseñas no coinciden
+            </asp:CompareValidator>
+        </p>
 
         <p>Repetir contraseña: <asp:TextBox ID="txtRepetirContrasena" runat="server" TextMode="Password"></asp:TextBox></p>
 

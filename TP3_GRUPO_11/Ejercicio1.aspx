@@ -56,7 +56,7 @@
 
         <p>Contraseña: <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password"></asp:TextBox>
             <asp:CompareValidator ID="cvContraseñas" runat="server" ControlToCompare="txtContrasena" 
-             ControlToValidate="txtRepetirContrasena" ErrorMessage="CompareValidator">Las contraseñas no coinciden
+             ControlToValidate="txtRepetirContrasena" ErrorMessage="CompareValidator" ForeColor="Red">Las contraseñas no coinciden
             </asp:CompareValidator>
         </p>
 
@@ -64,22 +64,22 @@
 
         <p>
             Correo electrónico: 
-            <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox></p>
+            <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
 
             <asp:RequiredFieldValidator ID="rfvCorreo" runat="server"
                  ControlToValidate="txtCorreo"
                  Text="*"
                  ErrorMessage="Ingrese un correo electrónico"
-                 ValidationGroup="Usuario">
-            </asp:RequiredFieldValidator>
+                 ValidationGroup="Usuario" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <asp:RegularExpressionValidator ID="revCorreo" runat="server"
                 ControlToValidate="txtCorreo"
                 ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-                Text="*"
+                Text="Ingrese un correo electrónico válido"
                 ErrorMessage="Ingrese un correo electrónico válido"
-                ValidationGroup="Usuario">
-            </asp:RegularExpressionValidator>
+                ValidationGroup="Usuario" ForeColor="Red"></asp:RegularExpressionValidator>
+        </p>
+
         <p>
             CP:
             <asp:TextBox ID="txtCP" runat="server"></asp:TextBox>
@@ -88,16 +88,14 @@
                 ControlToValidate="txtCP"
                 Text="*"
                 ErrorMessage="Ingrese código postal"
-                ValidationGroup="Usuario">
-            </asp:RequiredFieldValidator>
+                ValidationGroup="Usuario" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <asp:RegularExpressionValidator ID="revCP" runat="server"
                 ControlToValidate="txtCP"
                 ValidationExpression="^[0-9]{4}$"
-                Text="*"
+                Text="El codigo postal debe contener 4 digitos"
                 ErrorMessage="El codigo postal debe contener 4 digitos"
-                ValidationGroup="Usuario">
-            </asp:RegularExpressionValidator>
+                ValidationGroup="Usuario" ForeColor="Red"></asp:RegularExpressionValidator>
         </p>
         <p>Localidades:
             <asp:DropDownList ID="ddlLocalidades" runat="server">

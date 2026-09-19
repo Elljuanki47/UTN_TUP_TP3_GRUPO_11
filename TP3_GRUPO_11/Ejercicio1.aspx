@@ -104,7 +104,7 @@
 
         <asp:Button ID="btnGuardarUsuario" runat="server" style="margin-left: 87px" Text="Guardar Usuario" Width="120px" ValidationGroup="Usuario"/>
         <p>
-            <asp:Button ID="btnInicio" runat="server" Text="Ir a inicio.aspx" />
+            <asp:Button ID="btnInicio" runat="server" Text="Ir a inicio.aspx" OnClick="btnInicio_Click" />
         </p>
 
     </form>

@@ -38,5 +38,10 @@ namespace TP3_GRUPO_11
                 txtLocalidad.Text = "";
             }
         }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

@@ -10,6 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <h2>Bienvenido a Inicio.aspx</h2>
+
+         <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" />
     </form>
 </body>
 </html>

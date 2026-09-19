@@ -38,6 +38,13 @@ namespace TP3_GRUPO_11
                 txtLocalidad.Text = "";
             }
         }
+        protected void btnGuardarUsuario_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                lblBienvenida.Text = "Bienvenido " + txtUsuario.Text;
+            }
+        }
 
         protected void btnInicio_Click(object sender, EventArgs e)
         {

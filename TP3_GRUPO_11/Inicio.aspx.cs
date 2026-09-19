@@ -13,6 +13,11 @@ namespace TP3_GRUPO_11
         {
 
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio1.aspx");
+        }
     }
 }
 

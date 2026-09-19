@@ -17,8 +17,7 @@
                 Text="Nombre de localidad:"
                 AssociatedControlID="txtLocalidad" />
 
-            <asp:TextBox ID="txtLocalidad" runat="server"
-                Width="145px" />
+            <asp:TextBox ID="txtLocalidad" runat="server" Width="170px" style="margin-left: 5px;"/>
 
             <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server"
                 ControlToValidate="txtLocalidad"
@@ -52,19 +51,19 @@
 
         <h2>Usuarios</h2>
 
-        <p>Nombre usuario: <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox></p>
+        <p>Nombre usuario: <asp:TextBox ID="txtUsuario" runat="server" style="margin-left: 38px;"></asp:TextBox></p>
 
-        <p>Contraseña: <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password"></asp:TextBox>
+        <p>Contraseña: <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password" style="margin-left: 70px;"></asp:TextBox>
             <asp:CompareValidator ID="cvContraseñas" runat="server" ControlToCompare="txtContrasena" 
              ControlToValidate="txtRepetirContrasena" ErrorMessage="CompareValidator" ForeColor="Red">Las contraseñas no coinciden
             </asp:CompareValidator>
         </p>
 
-        <p>Repetir contraseña: <asp:TextBox ID="txtRepetirContrasena" runat="server" TextMode="Password"></asp:TextBox></p>
+        <p>Repetir contraseña: <asp:TextBox ID="txtRepetirContrasena" runat="server" TextMode="Password" style="margin-left: 22px;"></asp:TextBox></p>
 
         <p>
             Correo electrónico: 
-            <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCorreo" runat="server" style="margin-left: 22px;"></asp:TextBox>
 
             <asp:RequiredFieldValidator ID="rfvCorreo" runat="server"
                  ControlToValidate="txtCorreo"
@@ -82,7 +81,7 @@
 
         <p>
             CP:
-            <asp:TextBox ID="txtCP" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCP" runat="server" style="margin-left: 122px;"></asp:TextBox>
 
             <asp:RequiredFieldValidator ID="rfvCP" runat="server"
                 ControlToValidate="txtCP"
@@ -98,11 +97,17 @@
                 ValidationGroup="Usuario" ForeColor="Red"></asp:RegularExpressionValidator>
         </p>
         <p>Localidades:
-            <asp:DropDownList ID="ddlLocalidades" runat="server">
+            <asp:DropDownList ID="ddlLocalidades" runat="server" Width="176px" style="margin-left: 64px;">
             </asp:DropDownList>
         </p>
 
-        <asp:Button ID="btnGuardarUsuario" runat="server" style="margin-left: 87px" Text="Guardar Usuario" Width="120px" ValidationGroup="Usuario"/>
+        <asp:Button ID="btnGuardarUsuario" runat="server" style="margin-left: 150px" Text="Guardar Usuario" Width="120px" ValidationGroup="Usuario" OnClick="btnGuardarUsuario_Click"/>
+
+        <br />
+        <br />
+
+        <asp:Label ID="lblBienvenida" runat="server" Font-Bold="True"></asp:Label>
+
         <p>
             <asp:Button ID="btnInicio" runat="server" Text="Ir a inicio.aspx" OnClick="btnInicio_Click" />
         </p>
